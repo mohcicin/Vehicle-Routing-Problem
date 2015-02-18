@@ -42,7 +42,6 @@ public class Individual {
 	}
 	
 	
-	
 	// REMINDER SUBLIST:
 	// Sublist returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
 	
@@ -73,8 +72,8 @@ public class Individual {
 		return this.genes.get(index);
 	}
 	
-	public void setGene(int index, ArrayList<Customer> genePart){
-		this.genes.add(index, genePart);
+	public void setGene(int index, List<Customer> list){
+		this.genes.add(index, list);
 		fitness = 0;
 	}
 	
