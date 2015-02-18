@@ -47,9 +47,11 @@ public class Individual {
 	
 	
 	private static int getRandomIndex(List<Customer> list, int nbSubList){
-		
+		int max = list.size();
+		int min = 
 		Random rand = new Random();
-		rand.nextInt();
+		int randomIndex = rand.nextInt( (max - min) + 1 ) + min;
+		return randomIndex;
 		
 	}
 	
@@ -62,7 +64,7 @@ public class Individual {
 		return fitness;
 	}
 	
-	public List<List<Customer>> getGenes(){
+	public List<ArrayList<Customer>> getGenes(){
 		return this.genes;
 	}
 	
@@ -70,7 +72,7 @@ public class Individual {
 		return this.genes.get(index);
 	}
 	
-	public void setGene(int index, List<Customer> genePart){
+	public void setGene(int index, ArrayList<Customer> genePart){
 		this.genes.add(index, genePart);
 		fitness = 0;
 	}
