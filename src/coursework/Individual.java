@@ -9,11 +9,11 @@ public class Individual {
 	private List<ArrayList<Customer>> genes = new ArrayList<ArrayList<Customer>>();
 	private int nbTruck;
 	private double fitness = 0; // means: new individual
-
+	private static Random rand = new Random();
 	// Why not simply using a constructor ? Because we're creating an individual as a random one
 	public void generateIndividual(ArrayList<Customer> customers) {
 		
-		Random rand = new Random();
+		
 		this.nbTruck = rand.nextInt();
 		
 		ArrayList<ArrayList<Customer>> listOfLists = new ArrayList<ArrayList<Customer>>();
@@ -49,7 +49,6 @@ public class Individual {
 	private static int getRandomIndex(List<Customer> list, int nbSubList){
 		int max = list.size();
 		int min = 
-		Random rand = new Random();
 		int randomIndex = rand.nextInt( (max - min) + 1 ) + min;
 		return randomIndex;
 		
