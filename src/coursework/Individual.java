@@ -15,35 +15,27 @@ public class Individual {
 		
 		Random rand = new Random();
 		this.nbTruck = rand.nextInt();
-		int remainingCustomer = customers.size();
-		int lastIndex = 0;
-		// generate the sub-lists (routes)
-		for(int i = 0 ; i < nbTruck ; i++){
-			ArrayList<Customer> tmpList = new ArrayList<Customer>();
-			int lengthNextList = 0;
-			if(i == nbTruck - 1){ // the last routes takes all remaining customers
-				tmpList = (ArrayList<Customer>) customers.subList(0, remainingCustomer+1);
-				this.genes.add(tmpList);
-			}else{
-				lengthNextList = rand.nextInt( (remainingCustomer - 2) + 2 ) + 2;// 1 < listLength < nbCustomers
-				lastIndex = 
-				tmpList =  customers.subList(lastIndex, lastIndex+lengthNextList);
-				this.genes.add(tmpList);
-				remainingCustomer -= lengthNextList;
-			}
-		}
-		// other attempt
-		this.nbTruck = rand.nextInt();
 		
-		ArrayList<ArrayList> listOfLists = new ArrayList<ArrayList>();
+		ArrayList<ArrayList<Customer>> listOfLists = new ArrayList<ArrayList<Customer>>();
 		for(int i = 0 ; i < nbTruck ; i++){
 			listOfLists.add(new ArrayList<Customer>());
-		}
+		} // we have our n sublist into the list, great.
+		
+		// we fill them up one by one with random indexes
+		int indexLeft = 0;
+		int indexRight = getRandomIndex( customers, nbTruck);
+		int cntLoop = 0;
 		for(ArrayList<Customer> currentList : listOfLists){
-			
+			cntLoop++;
 			// add a random number of customers from the full list of "customers" to 
-			
+			for(int i = indexLeft ; i < indexRight ; i++){
+				currentList.add(customers.get(i));
+			}
+			indexLeft = indexRight;
+			indexRight = getRandomIndex(customers, nbTruck-cntLoop);
 		}
+		
+		this.genes = listOfLists;
 		
 		
 	}
@@ -54,12 +46,11 @@ public class Individual {
 	// Sublist returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
 	
 	
-	private static ArrayList<Customer> extractCustomers(List source, int indexFrom, int indexTo){
-		ArrayList<Customer> customers = (ArrayList<Customer>) source;
+	private static int getRandomIndex(List<Customer> list, int nbSubList){
 		
-		customers = customers.subList(indexFrom, indexTo);
+		Random rand = new Random();
+		rand.nextInt();
 		
-		return customers;
 	}
 	
 	
