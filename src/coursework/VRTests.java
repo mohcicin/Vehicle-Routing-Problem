@@ -7,7 +7,7 @@ public class VRTests {
 
 	public static void main(String[] args)throws Exception {
 		String [] shouldPass = {
-				"data/rand00010",
+				"data/rand00010"/*,
 				"data/rand00020",
 				"data/rand00030",
 				"data/rand00040",
@@ -26,13 +26,14 @@ public class VRTests {
 				"data/rand00800",
 				"data/rand00900",
 				"data/rand01000"
-				};
-		
+				*/};
+		/*
 		String [] shouldFail = {
 				"data/fail00002",
 				"data/fail00004"
 				};
-		
+		*/
+				
 		System.out.println("\nShould Pass");
 		System.out.println("Problem     \tSoln\tSize\tCost\tValid");
 		for (String base:shouldPass){
@@ -53,7 +54,7 @@ public class VRTests {
 				vrs.writeSVG(base+"prob.svg",base+"cwsn.svg");
 			}
 		}
-		
+		/*
 		System.out.println("\nShould Fail");
 		System.out.println("Problem\tSolution\tSize\tCost\tValid");
 		
@@ -72,6 +73,7 @@ public class VRTests {
 				vrs.writeSVG(b+"prob.svg", b+"soln.svg");
 			}
 		}
+		*/
 		
 	}
 }

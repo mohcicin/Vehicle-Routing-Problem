@@ -303,7 +303,7 @@ public class VRSolution {
 		FitnessCalc.setDepot(this.prob.depot);
 
 		int cntGeneration = 0;
-		while(cntGeneration < 1000 ){ // satisfaction criteria
+		while(cntGeneration < 100000 ){ // satisfaction criteria
 			cntGeneration++;
 			myPop = Algorithm.evolvePopulation( this.prob.customers, myPop);
 		}
@@ -314,7 +314,7 @@ public class VRSolution {
 		System.out.println("Population's fittest"+ myPop.getFittest());
 		System.out.println("SOLUTION: "+this.soln);
 		
-		System.out.println("EVOLUTIONARY SOLVER --- END");
+		System.out.println("EVOLUTIONARY SOLVER --- END\n");
 	}
 
 	//Calculate the total journey
