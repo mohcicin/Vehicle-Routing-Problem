@@ -10,7 +10,6 @@ public class Route {
 	public int goods;
 	public int truckCapacity;
 	
-	
 	public Route(int truckCapa){
 		this.customers = new ArrayList<Customer>();
 		this.goods = 0;
