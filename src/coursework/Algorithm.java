@@ -12,8 +12,8 @@ public class Algorithm {
 	private static ArrayList<Customer> customers; // needed to create a Population
 	
 
-	public Population evolvePopulation( ArrayList<Customer> cust, Population pop){
-		this.customers = cust;
+	public static Population evolvePopulation( ArrayList<Customer> cust, Population pop){
+		customers = cust;
 		Population newPopulation = new Population( cust, pop.size(), false); // false: must not alter the population
 
 		// keep the best individual
@@ -44,7 +44,6 @@ public class Algorithm {
 			tournamentPop.saveIndividual(i, pop.getIndividual(randomId));
 			
 		}
-		
 		return tournamentPop.getFittest();
 		
 	}
