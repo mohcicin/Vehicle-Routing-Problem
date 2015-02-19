@@ -11,6 +11,7 @@ import java.util.List;
 public class Chromosome {
 	
 	private List<List<Customer>> genes = new ArrayList<List<Customer>>();
+	private List<List<Integer>> genesModel = new ArrayList<List<Integer>>();
 
 	// alter the genes to become this type of chromosome :[1,2,3],[4,5,6],[7,8,9]
 	public void becomeBalancedChromosome(){
@@ -27,4 +28,19 @@ public class Chromosome {
 		
 	}
 
+	
+	public List<List<Customer>> getGenes(){
+		return this.genes;
+	}
+	
+	public List<List<Integer>> getGenesModel(){
+		updateGenesModel();
+		return this.genesModel;
+	}
+	
+	// re-establish the correspondance between the genes and the model (representation of the data to be used by the GA)
+	private static void updateGenesModel(){
+		
+	}
+	
 }
