@@ -9,10 +9,11 @@ public class Individual {
 	private Chromosome chromosome;
 	private double fitness = 0; // means: new individual
 	private static Random rand;
+	
 	// Why not simply using a constructor ? Because we're creating an individual as a random one
-	public void generateIndividual(ArrayList<Customer> customers) {
+	public void generateIndividual( int nbCustomers) {
 		this.chromosome = new Chromosome();
-		this.chromosome.becomeBalancedChromosome(); // we're not seeding yet.
+		this.chromosome.becomeBalancedChromosome(nbCustomers); // we're not seeding yet.
 		this.rand = new Random();
 		
 	}
@@ -33,11 +34,11 @@ public class Individual {
 	
 	
 	public double getFitness(){
-		if(fitness == 0){ // if this is a new individual
-			fitness = FitnessCalc.getFitness(this); // recalculate its fitness
+		if(this.fitness == 0){ // if this is a new individual
+			this.fitness = FitnessCalc.getFitness(this); // recalculate its fitness
 		}
 		
-		return fitness;
+		return this.fitness;
 	}
 	
 	public List<List<Customer>> getGenes(){
@@ -46,18 +47,18 @@ public class Individual {
 	
 	public void setGene(int index, List<Customer> list){
 		this.chromosome.add(index, list);
-		fitness = 0;
+		this.fitness = 0;
 	}
 	
 	public int size (){
-		return chromosome.size();
+		return chromosome.getGenes().size();
 	}
 	
 	
 	public String toString(){
 		String geneString = "";
 		for(int i = 0 ; i < size() ; i ++){
-			geneString += this.chromosome.get(i).toString();
+			geneString += this.chromosome.getGenes().get(i).toString();
 		}
 		return geneString;
 	}

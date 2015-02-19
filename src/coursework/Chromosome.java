@@ -14,12 +14,12 @@ public class Chromosome {
 	private List<List<Integer>> genesModel = new ArrayList<List<Integer>>();
 
 	// alter the genes to become this type of chromosome :[1,2,3],[4,5,6],[7,8,9]
-	public void becomeBalancedChromosome(){
+	public void becomeBalancedChromosome(int chromosomeLength){
 		
 	}
 	
 	// alter the genes to become a random type of chromosome : [6],[3,7,4],[2,1],[9,8,5,10]
-	public void becomeRandomChromosome(){
+	public void becomeRandomChromosome(int chromosomeLength){
 		
 	}
 	

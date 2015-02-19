@@ -1,21 +1,20 @@
 package coursework;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Population {
-	ArrayList<Customer> customers;
 	Individual[] individuals; // A population is a group of individuals
 	
 	
 	// create it
-	public Population ( ArrayList<Customer> cust, int populationSize, boolean initialise){
+	public Population ( List<Customer> customers, int populationSize, boolean initialise){
 		this.individuals = new Individual[populationSize];
-		this.customers = cust;
 		if(initialise){
 			// create each individual of the population
 			for(int i = 0; i < size(); i++){ // always use a size method, it's cleaner.
 				Individual newIndividual = new Individual();
-				newIndividual.generateIndividual(this.customers); // creates a RANDOM individual
+				newIndividual.generateIndividual(customers.size()); // creates a RANDOM individual
 				saveIndividual(i, newIndividual);	// add it to the population
 			}
 		}
