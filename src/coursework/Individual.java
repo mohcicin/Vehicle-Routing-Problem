@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Individual {
 	
-	private List<List<Customer>> genes;
+	private  genes;
 	private int nbTruck;
 	private double fitness = 0; // means: new individual
 	private static Random rand = new Random();
@@ -14,36 +14,10 @@ public class Individual {
 	public void generateIndividual(ArrayList<Customer> customers) {
 		
 		this.genes = new ArrayList<List<Customer>>();
-		this.nbTruck = rand.nextInt();
-		
-		List<List<Customer>> listOfLists;
-		listOfLists  = new ArrayList<List<Customer>>();
-		for(int i = 0 ; i < nbTruck ; i++){
-			listOfLists.add(new ArrayList<Customer>());
-		} // we have our n sublist into the list, great.
-		
-		// we fill them up one by one with random indexes
-		int indexLeft = 0;
-		int indexRight = getRandomIndex( customers, nbTruck);
-		int cntLoop = 0;
-		for(List<Customer> currentList : listOfLists){
-			cntLoop++;
-			// add a random number of customers from the full list of "customers" to 
-			for(int i = indexLeft ; i < indexRight ; i++){
-				currentList.add(customers.get(i));
-			}
-			indexLeft = indexRight;
-			indexRight = getRandomIndex(customers, nbTruck-cntLoop);
-		}
-		
-		this.genes = listOfLists;
+		this.nbTruck = (int) customers.size() / 3;
 		
 		
 	}
-	
-	
-	// REMINDER SUBLIST:
-	// Sublist returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
 	
 	
 	private static int getRandomIndex(List<Customer> list, int nbSubList){
