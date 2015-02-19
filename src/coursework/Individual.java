@@ -7,15 +7,12 @@ import java.util.Random;
 public class Individual {
 	
 	private Chromosome chromosome;
-	private int nbTruck;
 	private double fitness = 0; // means: new individual
-	private static Random rand = new Random();
+	private static Random rand;
 	// Why not simply using a constructor ? Because we're creating an individual as a random one
 	public void generateIndividual(ArrayList<Customer> customers) {
-		
-		this.chromosome = new Chromosome();
-		this.nbTruck = (int) customers.size() / 3;
-		
+		this.chromosome = new Chromosome(true);
+		this.rand = new Random();
 		
 	}
 	

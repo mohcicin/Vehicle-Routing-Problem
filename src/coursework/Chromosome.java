@@ -1,6 +1,6 @@
 package coursework;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /*
  * A chromosome represents a potential solution of the VRP. See Genetic algorithms
@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Chromosome {
 	
-	private ArrayList<Route> genes;
+	private List<List<Customer>> genes;
 	
 	public Chromosome(){
 		
@@ -23,10 +23,9 @@ public class Chromosome {
 		}
 	}
 	
-	public List<List<int>> getChromosome(){
+	public List<List<Customer>> getChromosome(){
 		
 	}
 	
-	public setGenes
 
 }
