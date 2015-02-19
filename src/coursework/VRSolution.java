@@ -9,7 +9,7 @@ import java.io.*;
 
 public class VRSolution {
 	public static VRProblem prob;
-	public List<List<Customer>>soln;
+	public List<List<Customer>>soln= new ArrayList<List<Customer>>();
 
 	public ArrayList<Route> routes = new ArrayList<Route>();
 
@@ -113,7 +113,6 @@ public class VRSolution {
 	 */
 	public void Solution2(){
 		//initialisation
-		this.soln = new ArrayList<List<Customer>>();
 		int maxCustomers = prob.customers.size();
 		ArrayList<SavingNode> savings = new ArrayList<SavingNode>();
 
@@ -294,8 +293,6 @@ public class VRSolution {
 	 */
 	public void evolutionarySolver(){
 		System.out.println("EVOLUTIONARY SOLVER --- START");
-
-		this.soln = new ArrayList<List<Customer>>();
 
 		// create the population
 		Population myPop = new Population( this.prob.customers, 50, true); // init with random values
