@@ -11,9 +11,14 @@ public class Individual {
 	private static Random rand;
 	// Why not simply using a constructor ? Because we're creating an individual as a random one
 	public void generateIndividual(ArrayList<Customer> customers) {
-		this.chromosome = new Chromosome(true);
+		this.chromosome = new Chromosome();
+		this.chromosome.becomeBalancedChromosome(); // we're not seeding yet.
 		this.rand = new Random();
 		
+	}
+	
+	public void mutate(){
+		this.chromosome.mutate();
 	}
 	
 	
@@ -36,27 +41,23 @@ public class Individual {
 	}
 	
 	public List<List<Customer>> getGenes(){
-		return this.genes;
-	}
-	
-	public List<Customer> getGene(int index){
-		return this.genes.get(index);
+		return this.chromosome.getGenes();
 	}
 	
 	public void setGene(int index, List<Customer> list){
-		this.genes.add(index, list);
+		this.chromosome.add(index, list);
 		fitness = 0;
 	}
 	
 	public int size (){
-		return genes.size();
+		return chromosome.size();
 	}
 	
 	
 	public String toString(){
 		String geneString = "";
 		for(int i = 0 ; i < size() ; i ++){
-			geneString += this.genes.get(i).toString();
+			geneString += this.chromosome.get(i).toString();
 		}
 		return geneString;
 	}

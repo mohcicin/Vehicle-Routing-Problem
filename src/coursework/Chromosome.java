@@ -1,5 +1,6 @@
 package coursework;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -9,23 +10,21 @@ import java.util.List;
  */
 public class Chromosome {
 	
-	private List<List<Customer>> genes;
-	
-	public Chromosome(){
+	private List<List<Customer>> genes = new ArrayList<List<Customer>>();
+
+	// alter the genes to become this type of chromosome :[1,2,3],[4,5,6],[7,8,9]
+	public void becomeBalancedChromosome(){
 		
 	}
 	
-	public Chromosome(boolean balanced){
-		if(balanced){ 
-			// Create this type of chromosome :[1,2,3],[4,5,6],[7,8,9]
-		} else{
-			// Create a random type of chromosome : [6],[3,7,4],[2,1],[9,8,5,10]
-		}
-	}
-	
-	public List<List<Customer>> getChromosome(){
+	// alter the genes to become a random type of chromosome : [6],[3,7,4],[2,1],[9,8,5,10]
+	public void becomeRandomChromosome(){
 		
 	}
 	
+	// a chromosome can alter its own structure
+	public void mutate(){
+		
+	}
 
 }

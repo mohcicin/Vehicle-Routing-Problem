@@ -46,7 +46,8 @@ public class Algorithm {
 	}
 	
 	private static void mutate (Individual indiv){
-		
+		if(Math.random() > mutationRate) // not sure
+			indiv.mutate();
 	}
 	
 }
