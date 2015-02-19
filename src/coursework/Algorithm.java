@@ -9,7 +9,7 @@ public class Algorithm {
 	private static final double uniformRate = 0.5;
 	private static final double mutationRate = 0.015;
 	private static final int tournamentSize = 5;
-	private ArrayList<Customer> customers; // needed to create a Population
+	private static ArrayList<Customer> customers; // needed to create a Population
 	
 
 	public Population evolvePopulation( ArrayList<Customer> cust, Population pop){
@@ -38,11 +38,14 @@ public class Algorithm {
 	
 	// selects the fittest individual of a random selection of individuals in the population
 	private static Individual tournamentSelection(Population pop){
-		Population tournamentPop = new Population(thi, tournamentSize, false)
+		Population tournamentPop = new Population(customers , tournamentSize, false);
 		for(int i=0 ; i < tournamentSize ; i++ ){
-			int randomId = Math.random() * ;
+			int randomId = (int) (Math.random() * pop.size());
+			tournamentPop.saveIndividual(i, pop.getIndividual(randomId));
 			
 		}
+		
+		return tournamentPop.getFittest();
 		
 	}
 	
