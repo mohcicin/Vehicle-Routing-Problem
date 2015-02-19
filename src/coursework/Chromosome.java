@@ -16,6 +16,12 @@ public class Chromosome {
 	// alter the genes to become this type of chromosome :[1,2,3],[4,5,6],[7,8,9]
 	public void becomeBalancedChromosome(int chromosomeLength){
 		
+		
+		for(int i = 0 ; i < chromosomeLength ; i ++){
+			for(List<Integer> li: )
+		}
+		
+		
 	}
 	
 	// alter the genes to become a random type of chromosome : [6],[3,7,4],[2,1],[9,8,5,10]
