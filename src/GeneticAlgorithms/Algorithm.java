@@ -43,7 +43,7 @@ public class Algorithm {
 	
 	// selects the fittest individual of a random selection of individuals in the population
 	private static Individual tournamentSelection(Population pop){
-		Population tournament = new Population ( tournamentSize, false); // tournamentSize ?
+		Population tournament = new Population (  tournamentSize, false); // tournamentSize ?
 		
 		for(int i = 0 ; i < tournamentSize ; i++ ){
 			int randomId = (int) (Math.random() * pop.size());

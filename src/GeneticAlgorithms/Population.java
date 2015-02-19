@@ -1,14 +1,14 @@
 package GeneticAlgorithms;
 
+import java.util.List;
+
 public class Population {
 	
-	Individual[] individuals; // A population is a group of individuals
-	
+	private Individual[] individuals; // A population is a group of individuals
 	
 	// create it
 	public Population (int populationSize, boolean initialise){
 		this.individuals = new Individual[populationSize];
-		
 		if(initialise){
 			// create each individual of the population
 			for(int i = 0; i < size(); i++){ // always use a size method, it's cleaner.
