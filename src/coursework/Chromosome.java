@@ -39,8 +39,8 @@ public class Chromosome {
 	}
 	
 	// re-establish the correspondance between the genes and the model (representation of the data to be used by the GA)
-	private static void updateGenesModel(){
-		
+	private void updateGenesModel(){
+		// find each customer id and put it at the corresponding spot
 	}
 	
 }
