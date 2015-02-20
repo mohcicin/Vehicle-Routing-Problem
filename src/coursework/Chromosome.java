@@ -48,12 +48,25 @@ public class Chromosome {
 		// first shot, we just randomly switch two customers
 		int max = this.genes.size();
 		int min = 1; // 'range' [1,nbCustomer]
-		int c1 = -1;
-		int c2 = -1;
+		int randIndex1 = -1;
+		int randIndex2 = -1;
 		do{
-			c1 = rand.nextInt( (max-min) + 1 ) + min; // random val within 'range'.
-			c2 = rand.nextInt( (max-min) + 1 ) + min;
-		}while(c1 == c2);
+			randIndex1 = rand.nextInt( (max-min) + 1 ) + min; // random val within 'range'.
+			randIndex2 = rand.nextInt( (max-min) + 1 ) + min;
+		}while(randIndex1 == randIndex2);
+		
+		int tmp = -1;
+		
+		
+		for(List<Integer> li : this.genesModel){
+			for(Integer customerId : li){
+				if( (customerId == randIndex1) || (customerId == randIndex2) ){
+					if(customerId == randIndex1)
+						
+				}
+			}
+		}
+		
 		// update the Genes to the new changes in the solution
 		updateGenes();
 	}
