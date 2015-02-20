@@ -14,13 +14,25 @@ public class Chromosome {
 	private List<List<Integer>> genesModel = new ArrayList<List<Integer>>();
 
 	// alter the genes to become this type of chromosome :[1,2,3],[4,5,6],[7,8,9]
-	public void becomeBalancedChromosome(int chromosomeLength){
+	public void becomeBalancedChromosome(List<Customer> customers){
 		
+		ArrayList<List<Customer>> threeLists = new ArrayList<List<Customer>>();
+		ArrayList<Customer> l1 = new ArrayList<Customer>();
+		ArrayList<Customer> l2 = new ArrayList<Customer>();
+		ArrayList<Customer> l3 = new ArrayList<Customer>();
+		threeLists.add(l1);
+		threeLists.add(l2);
+		threeLists.add(l3);
 		
-		for(int i = 0 ; i < chromosomeLength ; i ++){
-			for(List<Integer> li: )
+		for(int i = 0 ; i < customers.size() ; i ++){
+			for(List<Customer> li: threeLists){
+				li.add(customers.get(i));
+				if(li.size()>=customers.size()/3)
+					break;
+			}
 		}
-		
+		if(threeLists.size() != customers.size())
+			System.out.println("ERROR HERE");
 		
 	}
 	

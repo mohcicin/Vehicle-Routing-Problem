@@ -11,9 +11,9 @@ public class Individual {
 	private static Random rand;
 	
 	// Why not simply using a constructor ? Because we're creating an individual as a random one
-	public void generateIndividual( int nbCustomers) {
+	public void generateIndividual( List<Customer> customers) {
 		this.chromosome = new Chromosome();
-		this.chromosome.becomeBalancedChromosome(nbCustomers); // we're not seeding yet.
+		this.chromosome.becomeBalancedChromosome(customers); // we're not seeding yet.
 		this.rand = new Random();
 		
 	}
