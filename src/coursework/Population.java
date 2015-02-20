@@ -14,7 +14,7 @@ public class Population {
 			// create each individual of the population
 			for(int i = 0; i < size(); i++){ // always use a size method, it's cleaner.
 				Individual newIndividual = new Individual();
-				newIndividual.generateIndividual(customers.size()); // creates a RANDOM individual
+				newIndividual.generateIndividual(customers); // creates a RANDOM individual
 				saveIndividual(i, newIndividual);	// add it to the population
 			}
 		}
