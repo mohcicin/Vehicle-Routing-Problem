@@ -55,14 +55,15 @@ public class Chromosome {
 			randIndex2 = rand.nextInt( (max-min) + 1 ) + min;
 		}while(randIndex1 == randIndex2);
 		
-		int tmp = -1;
-		
-		
+
 		for(List<Integer> li : this.genesModel){
 			for(Integer customerId : li){
 				if( (customerId == randIndex1) || (customerId == randIndex2) ){
-					if(customerId == randIndex1)
-						
+					if(customerId == randIndex1){
+						customerId = randIndex2;
+					}else if (customerId == randIndex2){
+						customerId = randIndex1;
+					}
 				}
 			}
 		}
