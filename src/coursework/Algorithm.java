@@ -20,7 +20,7 @@ public class Algorithm {
 		newPopulation.saveIndividual(0, pop.getFittest());
 		
 		
-		// crossover (or "recombination")
+		// crossover
 		for(int i = 0 ; i < pop.size() ; i++){
 			Individual indiv1 = tournamentSelection(pop); // 
 			Individual indiv2 = tournamentSelection(pop); // get two different fittest individuals out of 5 random individuals
@@ -28,7 +28,7 @@ public class Algorithm {
 			newPopulation.saveIndividual( i, newIndiv); // save the new individual in the new population
 		}
 
-		// mutate the population
+		// mutation
 		for(int i = 1 ; i < newPopulation.size() ; i++){
 			mutate(newPopulation.getIndividual(i));
 		}

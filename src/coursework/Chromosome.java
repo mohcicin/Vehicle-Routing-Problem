@@ -2,6 +2,7 @@ package coursework;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /*
  * A chromosome represents a potential solution of the VRP. See Genetic algorithms
@@ -12,6 +13,7 @@ public class Chromosome {
 	
 	private List<List<Customer>> genes = new ArrayList<List<Customer>>();
 	private List<List<Integer>> genesModel = new ArrayList<List<Integer>>();
+	private Random rand = new Random();
 
 	// alter the genes to become this type of chromosome :[1,2,3],[4,5,6],[7,8,9]
 	public void becomeBalancedChromosome(List<Customer> customers){
@@ -43,7 +45,17 @@ public class Chromosome {
 	
 	// a chromosome can alter its own structure
 	public void mutate(){
-		
+		// first shot, we just randomly switch two customers
+		int max = this.genes.size();
+		int min = 1; // 'range' [1,nbCustomer]
+		int c1 = -1;
+		int c2 = -1;
+		do{
+			c1 = rand.nextInt( (max-min) + 1 ) + min; // random val within 'range'.
+			c2 = rand.nextInt( (max-min) + 1 ) + min;
+		}while(c1 == c2);
+		// update the Genes to the new changes in the solution
+		updateGenes();
 	}
 
 	
@@ -59,6 +71,10 @@ public class Chromosome {
 	// re-establish the correspondance between the genes and the model (representation of the data to be used by the GA)
 	private void updateGenesModel(){
 		// find each customer id and put it at the corresponding spot
+	}
+	
+	private void updateGenes(){
+		
 	}
 	
 }
