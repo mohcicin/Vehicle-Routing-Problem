@@ -45,12 +45,22 @@ public class Algorithm {
 			
 		}
 		return tournamentPop.getFittest();
-		
 	}
 	
 	private static Individual crossover( Individual indiv1, Individual indiv2){
-		Individual children = new Individual();
+		Individual p1 = indiv1;
+		Individual p2 = indiv2;
+		Individual children = new Individual(); // its chromosome has no defined structure yet
 		
+		// find cross section
+		ArrayList<Customer> crossedList = (ArrayList<Customer>) p1.getGenes().get(0);
+			
+		
+		// crossover
+		
+		// take off the routes containing elements that appear twice
+		
+		// append the customers lost in the last step to the end of the last route
 		
 		return children;
 	}
