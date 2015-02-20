@@ -49,7 +49,10 @@ public class Algorithm {
 	}
 	
 	private static Individual crossover( Individual indiv1, Individual indiv2){
+		Individual children = new Individual();
 		
+		
+		return children;
 	}
 	
 	private static void mutate (Individual indiv){
